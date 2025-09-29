@@ -5,9 +5,9 @@
     "name": "SPED Base",
     "summary": """
         Framework abstrato pro SPED""",
-    "version": "16.0.3.2.0",
+    "version": "18.0.0.0.1",
     "license": "AGPL-3",
-    "author": "Akretion, Odoo Community Association (OCA)",
+    "author": "BlueConnect, Akretion, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/l10n-brazil",
     "depends": ["l10n_br_fiscal"],
     "maintainers": ["rvalyi"],
