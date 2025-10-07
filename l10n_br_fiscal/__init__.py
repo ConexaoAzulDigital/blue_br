@@ -12,6 +12,7 @@ import os
 from odoo import SUPERUSER_ID, api
 from odoo.tools import convert
 from .demo import DEMO_NCM, DEMO_NBM, DEMO_NBS, DEMO_CEST
+import traceback
 
 _logger = logging.getLogger(__name__)
 
@@ -68,6 +69,23 @@ def convert_csv_import(
     return convert.convert_csv_import._original_method(
         env, module, fname, csvcontent, idref, mode, noupdate
     )
+
+def convert_csv_import(env, module, fname, csvcontent, idref=None, mode="init", noupdate=False):
+    filename, _ext = os.path.splitext(os.path.basename(fname))
+    model = filename.split("-")[0]
+    _logger.debug("[CSV LOAD] module=%s file=%s model=%s mode=%s noupdate=%s",
+                  module, fname, model, mode, noupdate)
+
+    try:
+        # (SEU código de filtro demo permanece igual aqui)
+        # ...
+        return convert.convert_csv_import._original_method(
+            env, module, fname, csvcontent, idref, mode, noupdate
+        )
+    except Exception:
+        _logger.error("[CSV LOAD ERROR] module=%s file=%s model=%s\n%s",
+                      module, fname, model, traceback.format_exc())
+        raise
 
 
 convert_csv_import._original_method = convert.convert_csv_import

@@ -5,7 +5,7 @@ from odoo import Command, fields, models
 
 
 class AccountTaxTemplate(models.Model):
-    _inherit = "account.tax.template"
+    _inherit = 'account.tax'
 
     fiscal_tax_ids = fields.Many2many(
         comodel_name="l10n_br_fiscal.tax",

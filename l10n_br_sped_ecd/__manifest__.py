@@ -7,7 +7,7 @@
         Arquivo ECD do SPED""",
     "version": "18.0.4.0.0",
     "license": "AGPL-3",
-    "author": "Akretion, Odoo Community Association (OCA)",
+    "author": "BlueConnect, Akretion, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/l10n-brazil",
     "development_status": "Alpha",
     "maintainers": ["rvalyi", "renatonlima"],
